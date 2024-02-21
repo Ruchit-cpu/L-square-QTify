@@ -6,7 +6,7 @@ export default function Searchbar() {
   return (
     <div className={styles.container}>
       <input
-        placeholder="Search a album of your choice"
+        placeholder="Search a song of your choice"
         className={styles.search}
       />
       <button className={styles.searchButton}>

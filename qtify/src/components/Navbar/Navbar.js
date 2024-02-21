@@ -9,7 +9,7 @@ export default function Navbar() {
     <nav className={styles.Navbar}>
       <Logo />
       <Searchbar />
-      <Button />
+      <Button buttonText="Give Feedback" />
     </nav>
   );
 }
