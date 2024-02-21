@@ -1,0 +1,8 @@
+.Navbar {
+  display: flex;
+  height: 74px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(52, 201, 75, 1);
+  padding: 0 32px;
+}
