@@ -19,3 +19,6 @@
   /* padding: 10px;
   margin: 10px; */
 }
+.textContainer p {
+  margin: 0;
+}

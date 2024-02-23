@@ -1,0 +1,15 @@
+.container {
+  padding: 32px;
+}
+.topLine {
+  display: flex;
+  justify-content: space-between;
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 1);
+}
+.collapse {
+  color: rgba(52, 201, 75, 1);
+}

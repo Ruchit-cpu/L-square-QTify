@@ -6,8 +6,8 @@ export default function HeroSection() {
   return (
     <div className={style.container}>
       <div className={style.textContainer}>
-        <p style={{ margin: 0 }}>100 Thousand Songs, ad-free</p>
-        <p style={{ margin: 0 }}>Over thousands podcast episodes</p>
+        <p>100 Thousand Songs, ad-free</p>
+        <p>Over thousands podcast episodes</p>
       </div>
       <div>
         <img src={heroImage} alt="HeroImage" width={212} height={212} />
