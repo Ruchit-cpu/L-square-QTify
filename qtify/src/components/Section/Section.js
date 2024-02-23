@@ -4,7 +4,7 @@ import { useState } from "react";
 import Grid from "@mui/material/Grid";
 import Card from "../Card/Card";
 export default function Section({ albumData, type }) {
-  const [collapse, setCollapse] = useState("Show all");
+  const [collapse, setCollapse] = useState("Collapse");
 
   return (
     <div className={style.container}>
