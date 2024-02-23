@@ -1,30 +1,15 @@
 import React from "react";
 import style from "./Section.module.css";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Grid from "@mui/material/Grid";
 import Card from "../Card/Card";
-export default function Section() {
-  const [data, setData] = useState([]);
+export default function Section({ albumData, type }) {
   const [collapse, setCollapse] = useState("Show all");
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://qtify-backend-labs.crio.do/albums/top"
-        );
-        console.log(response.data);
-        setData(response.data);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    fetchData();
-  }, []);
+
   return (
     <div className={style.container}>
       <div className={style.topLine}>
-        <p>Top Albums</p>
+        <p>{type}</p>
         <p
           onClick={() => {
             if (collapse === "Show all") {
@@ -38,10 +23,10 @@ export default function Section() {
           {collapse}
         </p>
       </div>
-      {data ? (
+      {albumData ? (
         collapse === "Show all" ? (
           <Grid container spacing={2}>
-            {data.slice(0, 7).map((album) => {
+            {albumData.slice(0, 7).map((album) => {
               return (
                 <Grid item xs={1.714} key={album.id}>
                   <Card album={album} />
@@ -51,7 +36,7 @@ export default function Section() {
           </Grid>
         ) : (
           <Grid container spacing={2}>
-            {data.map((album) => {
+            {albumData.map((album) => {
               return (
                 <Grid item xs={1.714} key={album.id}>
                   <Card album={album} />
