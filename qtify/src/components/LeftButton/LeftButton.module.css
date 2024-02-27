@@ -1,6 +1,6 @@
 .customPrev {
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   width: 50px;
   height: 50px;
@@ -10,5 +10,8 @@
   align-items: center;
   cursor: pointer;
   z-index: 10;
-  left: 10px;
+  left: 0px;
+}
+.customPrev:hover {
+  opacity: 1;
 }

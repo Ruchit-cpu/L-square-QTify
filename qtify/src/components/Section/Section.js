@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import Card from "../Card/Card";
 import Carousel from "../Carousel/Carousel";
 export default function Section({ albumData, type }) {
-  const [collapse, setCollapse] = useState("Collapse");
+  const [collapse, setCollapse] = useState("Show all");
 
   return (
     <div className={style.container}>
@@ -13,10 +13,10 @@ export default function Section({ albumData, type }) {
         <p>{type}</p>
         <p
           onClick={() => {
-            if (collapse === "Show All") {
+            if (collapse === "Show all") {
               setCollapse("Collapse");
             } else {
-              setCollapse("Show All");
+              setCollapse("Show all");
             }
           }}
           className={style.collapse}
@@ -25,7 +25,7 @@ export default function Section({ albumData, type }) {
         </p>
       </div>
       {albumData ? (
-        collapse === "Show All" ? (
+        collapse === "Show all" ? (
           <Carousel albumData={albumData} />
         ) : (
           <Grid container spacing={2}>

@@ -1,6 +1,6 @@
 .customNext {
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   width: 50px;
   height: 50px;
@@ -11,4 +11,7 @@
   cursor: pointer;
   z-index: 10;
   right: 10px;
+}
+.customNext:hover {
+  opacity: 1;
 }
