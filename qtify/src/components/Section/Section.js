@@ -13,10 +13,10 @@ export default function Section({ albumData, type }) {
         <p>{type}</p>
         <p
           onClick={() => {
-            if (collapse === "Show all") {
+            if (collapse === "Show All") {
               setCollapse("Collapse");
             } else {
-              setCollapse("Show all");
+              setCollapse("Show All");
             }
           }}
           className={style.collapse}
@@ -25,7 +25,7 @@ export default function Section({ albumData, type }) {
         </p>
       </div>
       {albumData ? (
-        collapse === "Show all" ? (
+        collapse === "Show All" ? (
           <Carousel albumData={albumData} />
         ) : (
           <Grid container spacing={2}>
