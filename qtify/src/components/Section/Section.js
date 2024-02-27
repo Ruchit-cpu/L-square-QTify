@@ -3,6 +3,7 @@ import style from "./Section.module.css";
 import { useState } from "react";
 import Grid from "@mui/material/Grid";
 import Card from "../Card/Card";
+import Carousel from "../Carousel/Carousel";
 export default function Section({ albumData, type }) {
   const [collapse, setCollapse] = useState("Collapse");
 
@@ -25,15 +26,7 @@ export default function Section({ albumData, type }) {
       </div>
       {albumData ? (
         collapse === "Show all" ? (
-          <Grid container spacing={2}>
-            {albumData.slice(0, 7).map((album) => {
-              return (
-                <Grid item xs={1.714} key={album.id}>
-                  <Card album={album} />
-                </Grid>
-              );
-            })}
-          </Grid>
+          <Carousel albumData={albumData} />
         ) : (
           <Grid container spacing={2}>
             {albumData.map((album) => {
