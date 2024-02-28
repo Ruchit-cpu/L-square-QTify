@@ -35,10 +35,26 @@ export default function Homepage() {
     fetchData();
   }, []);
 
+  const [songs, setSongs] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://qtify-backend-labs.crio.do/songs"
+        );
+        setSongs(response.data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div>
-      <Section albumData={topAlbum} type="Top Albums" />
-      <Section albumData={newAlbum} type="New Albums" />
+      <Section albumData={topAlbum} string="Top Albums" type="albums" />
+      <Section albumData={newAlbum} string="New Albums" type="albums" />
+      <Section albumData={songs} string="Songs" type="songs" />
     </div>
   );
 }

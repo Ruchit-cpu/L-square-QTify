@@ -13,3 +13,7 @@
 .collapse {
   color: rgba(52, 201, 75, 1);
 }
+
+.tab {
+  color: white !important;
+}

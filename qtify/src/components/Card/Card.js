@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Card.module.css";
 import Chip from "@mui/material/Chip";
 
-export default function Card({ album }) {
+export default function Card({ album, type }) {
   return (
     <div className={style.cardComponent}>
       <div className={style.cardMedia}>
@@ -13,7 +13,11 @@ export default function Card({ album }) {
         />
         <div className={style.chipContainer}>
           <Chip
-            label={album.follows + " follows"}
+            label={
+              type === "albums"
+                ? album.follows + " follows"
+                : album.likes + " Likes"
+            }
             variant="outlined"
             className={style.chip}
             sx={{

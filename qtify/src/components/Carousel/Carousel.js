@@ -18,7 +18,7 @@ const Controls = ({ albumData }) => {
   return <></>;
 };
 
-export default function Carousel({ albumData }) {
+export default function Carousel({ albumData, type }) {
   // console.log(albumData);
   return (
     <div className={style.container}>
@@ -54,7 +54,7 @@ export default function Carousel({ albumData }) {
         {albumData.map((album) => {
           return (
             <SwiperSlide key={album.id}>
-              <Card album={album} />
+              <Card album={album} type={type} />
             </SwiperSlide>
           );
         })}
