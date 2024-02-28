@@ -69,6 +69,7 @@ export default function Section({ albumData, string, type }) {
       {albumData.length !== 0 ? (
         type === "songs" ? (
           <Box sx={{ width: "100%", color: "white" }}>
+            {/* eslint-disable-next-line */}
             <Box sx={{ marginBottom: 4 }}>
               <Tabs
                 value={value}
