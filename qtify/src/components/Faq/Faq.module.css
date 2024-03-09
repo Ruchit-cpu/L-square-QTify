@@ -1,0 +1,14 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 1);
+  font-family: Poppins;
+  margin-bottom: 40px;
+}
+.faq h1 {
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 75px;
+}

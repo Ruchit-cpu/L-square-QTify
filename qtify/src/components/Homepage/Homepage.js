@@ -1,6 +1,10 @@
 import React from "react";
 // import style from "./Homepage.module.css";
+import Navbar from "../Navbar/Navbar";
+import HeroSection from "../HeroSection/HeroSection";
 import Section from "../Section/Section";
+import Faq from "../Faq/Faq";
+import MusicBar from "../MusicBar/MusicBar";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -52,9 +56,13 @@ export default function Homepage() {
 
   return (
     <div>
+      <Navbar searchData={topAlbum} />
+      <HeroSection />
       <Section albumData={topAlbum} string="Top Albums" type="albums" />
       <Section albumData={newAlbum} string="New Albums" type="albums" />
       <Section albumData={songs} string="Songs" type="songs" />
+      <Faq />
+      <MusicBar />
     </div>
   );
 }

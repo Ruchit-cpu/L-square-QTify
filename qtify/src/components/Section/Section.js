@@ -21,22 +21,25 @@ export default function Section({ albumData, string, type }) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
+    // console.log(newValue, event.target.id);
     setValue(newValue);
   };
 
   useEffect(() => {
     if (type === "songs") {
-      const fetchData = async () => {
-        try {
-          const response = await axios.get(
-            "https://qtify-backend-labs.crio.do/genres"
-          );
-          setGenre([...genre, ...response.data.data]);
-        } catch (e) {
-          console.log(e);
-        }
-      };
-      fetchData();
+      if (genre.length === 1) {
+        const fetchData = async () => {
+          try {
+            const response = await axios.get(
+              "https://qtify-backend-labs.crio.do/genres"
+            );
+            setGenre([...genre, ...response.data.data]);
+          } catch (e) {
+            console.log(e);
+          }
+        };
+        fetchData();
+      }
     }
   }, []);
 
@@ -99,11 +102,18 @@ export default function Section({ albumData, string, type }) {
               </Tabs>
             </Box>
             <Carousel
-              albumData={albumData.filter((item) =>
-                genre.length > 1 && value !== 0
-                  ? item.genre.key === genre[value].key
-                  : item
-              )}
+              albumData={
+                value === 0
+                  ? albumData
+                  : albumData.filter(
+                      (item) => item.genre.key === genre[value].key
+                    )
+              }
+              // albumData={albumData.filter((item) =>
+              //   genre.length > 1 && value !== 0
+              //     ? item.genre.key === genre[value].key
+              //     : item
+              // )}
               type={type}
             />
           </Box>
